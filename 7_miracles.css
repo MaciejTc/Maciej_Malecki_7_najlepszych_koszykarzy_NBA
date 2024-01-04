@@ -1,0 +1,374 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img{
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.logo img:hover{
+    box-shadow: 0 0 15px blue;
+    animation: resizeImg 0.5s forwards;
+}
+
+.main-menu a .resize,
+.external-menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin: 0 10px;
+    float:left;
+}
+
+
+/* Animacja powiększania tekstu menu */
+.resize:hover{
+    animation: resize 0.5s infinite alternate;
+}
+
+@keyframes resize {
+    0% {
+    transform: scale(1);
+    }
+    100% {
+    transform: scale(1.25);
+  }
+}
+
+main {
+    padding: 20px;
+    height: 72vw;
+}
+
+main h2{
+    float: right;
+    margin-right: 8vw;
+    margin-top: -2vw;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    float: right;
+    margin-right: 12.5vw;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.player-list,
+.player-list2{
+    list-style: decimal;
+    margin-left: 20px;
+    font-size: 1.1vw;
+    float:left;
+    margin-right: 100px;
+    list-style-image: url('images/basketball.png');
+}
+
+.player-list{
+    margin-left: 14vw;
+}
+
+.player-list a,
+.player-list2 a{
+    text-decoration: none;
+    color: #333;
+}
+
+.move-right:hover {
+    animation: moveRight 0.5s forwards;
+}
+
+@keyframes moveRight {
+    0% { 
+    transform: translateX(0) scale(1);
+
+    }
+    100% {
+    transform: translateX(20px) scale(1.15);
+  }
+}
+
+#Name{
+    color: red;
+    font-style: italic;
+}
+
+/* Stopka */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Dodatkowe style dla podstron graczy */
+main h1 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2vw;
+}
+
+.h1-1200{
+    display: none;
+}
+
+main .Ranking,
+main .p-players {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.3vw;
+}
+
+main .Ranking{
+    margin-left: 12vw;
+}
+
+.p-players{
+    padding: 0 20px;
+}
+
+.player-info{
+    border-width: 5px;
+    border-color: #333;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 0 20px;
+    width: 100%;
+    height: auto;
+}
+
+.player-info {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.scroll-container {
+    background-color: #333;
+    overflow-x: auto;
+    border-radius: 15px;
+    white-space: nowrap;
+    padding: 10px;
+    margin:0 -20px;
+}
+
+.scroll-container img {
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 100%;
+    height: auto; 
+}
+
+@keyframes resizeImg {
+    0% { 
+    transform:scale(1);
+
+    }
+    100% {
+    transform:scale(1.09);
+  }
+}
+
+.scroll-container img:hover{
+    box-shadow: 0 0 10px white;
+    animation: resizeImg 0.5s forwards;
+}
+
+.importantInfo{
+    font-size: 2vw;
+}
+
+.info {
+    padding: 10px;
+    vertical-align: top;
+    font-size: 1.25vw;
+}
+
+.info li{
+    margin: 1vw 0;
+}
+
+@media screen and (max-width:1200px) {
+    header{height: 13vw;text-align: center;background-color: blue;}
+    main{height:120vw;}
+    p.Ranking{font-size: 10vw;position: relative;right: 9vw;}
+    main .p-players{font-size: 1.5vw;}
+    main h1{font-size: 3vw;}
+    .h1-1200{display: contents;font-size: 1.5vw;}
+    .logo{display: none;}
+    .main-menu {text-align: center;width: 100%;position: relative;display: flex;flex-direction: row; align-items: center;}
+    .main-menu a.resize {float: none;display: inline-block;}
+    .external-menu {
+        clear: both;text-align: center;position: relative;display:flex;flex-direction: row; align-items: center; 
+        text-shadow: 1px 1px 5px black, -1px -1px 5px black, 1px -1px 5px black, -1px 1px 5px black;
+    }
+    .external-menu a{
+        color: orange;
+    }
+    .player-list,
+    .player-list2{
+        font-size: 1.5vw;
+        position: relative;
+        right: 7vw;
+    }
+    .player-list li,
+    .player-list2 li{
+        font-size: 1.5vw;
+    }
+    label{
+        font-size: 1.25vw;
+    }
+    main h2{
+        margin-right: 4vw;
+        margin-top: -17vw;
+        font-size: 1.75vw;
+    }
+    form{
+        margin-top: -11.5vw;
+        position: relative;
+        left: 5vw;
+    }
+
+    .importantInfo{font-size: 2.5vw;}
+    .info{font-size: 1.5vw;}
+
+    footer{background-color: red;}
+    @keyframes moveRight {
+        0% { 
+        transform: translateX(0) scale(1);
+        }
+        100% {
+        transform: translateX(15px) scale(1.1);
+      }
+    }
+    @keyframes resize {
+        0% {
+        transform: scale(1);
+        }
+        100% {
+        transform: scale(1.1);
+      }
+    }
+}
+
+@media screen and (max-width:1500px){
+    .player-list{margin-left: 13vw;font-size: 1.25vw;}
+    .player-list2{font-size: 1.25vw;}
+    p.Ranking{font-size: 1.65vw;}
+    form{float: right;font-size: 1vw;margin-right: 13vw;}
+    h2{font-size: 1.45vw;float:left;margin-right: 5vw;}
+}
+
+@media screen and (max-width:900px){
+    main{height: 150vw;}
+    .main-menu, .external-menu{
+        font-size: 1.75vw;
+        margin: -2.25vw;
+    }
+    .main-menu{
+        margin: 2.5vw;
+        margin-left: -2vw;
+    }
+    
+    p.p-players{font-size: 2.25vw;}
+
+    .info{font-size: 2.25vw;}
+
+    p.Ranking {
+        clear: both;
+        position: relative;
+        right: -2vw;
+        margin: 0 auto;
+        font-size: 2.75vw;
+      }
+      main h2{
+        float:left;
+        margin-top: 10vw;
+        font-size: 2.25vw;
+      }
+      form{
+        float: left;
+        margin-top: 4vw;
+      }
+      label{
+        font-size: 1.75vw;
+      }
+      
+      .player-list li, .player-list2 li{
+        font-size: 2vw;
+      }
+      
+}
+
+@media screen and (max-width:600px) {
+    header{background-color: chocolate;width:100%;height:100px;}
+    .main-menu a{font-size: 20px;margin: 5px;}
+    .main-menu a,.external-menu a{margin-left: 5px;font-size: 2.25vw;}
+    .main-menu a.resize,
+    .external-menu a {width: 50px;}
+    main{height: 200vw;}
+    main h1{font-size: 4.5vw;}
+    main .p-players {font-size: 2.75vw;}
+    footer{width: 100%;font-size: 2vw;background-color: blue;}
+    .player-list li,
+    .player-list2 li{font-size: 3vw;}
+    .player-list2{margin-left: 13vw;}
+    .h1-1200{font-size: 3vw;}
+    form{clear: both;margin-top: 1vw;font-size: 2.5vw;}
+    main h2{font-size: 3vw;margin-top: 9vw;margin-right: 4vw;}
+    .importantInfo{font-size: 3.75vw;}
+    .info{font-size: 2.75vw;}
+    label{font-size: 2vw;}
+    .external-menu a{color: rgb(207, 172, 207);}
+}
